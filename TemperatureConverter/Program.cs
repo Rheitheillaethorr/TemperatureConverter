@@ -20,19 +20,39 @@ namespace TemperatureConverter
             {
                 case 1:
                     Console.WriteLine("You choosed Celsius");
-                    //Convert(choice);
+                    Convert(1);
                     break;
                 case 2:
                     Console.WriteLine("You choosed Kelvin");
-                    //Convert(choice);
+                    Convert(2);
                     break;
                 case 3:
                     Console.WriteLine("You choosed Fahrenheit");
-                    //Convert(choice);
+                    Convert(3);
                     break;
                 default:
                     Console.WriteLine("You choosed wrong number, try again");
                     GetInfo();
+                    break;
+            }
+        }
+        static void Convert(int Number)
+        {
+            Console.WriteLine("enter the number of degrees: ");
+            float degrees = float.Parse(Console.ReadLine());
+            switch (Number)
+            {
+                case 1:
+                    Console.WriteLine(degrees + " Celsius are " + (degrees + 273.15) + " Kelvin");
+                    Console.WriteLine(degrees + " Celsius are " + (degrees * 1.8 + 32) + " Fahrenheit");
+                    break;
+                case 2:
+                    Console.WriteLine(degrees + " Kelvin are " + (degrees - 273.15) + " Celsius");
+                    Console.WriteLine(degrees + " Kelvin are " + ((degrees - 273.15) * 1.8 + 32) + " Fahrenheit");
+                    break;
+                case 3:
+                    Console.WriteLine(degrees + " Fahrenheit are " + (((degrees-32)*5)/9) + " Celsius");
+                    Console.WriteLine(degrees + " Fahrenheit are " + ((((degrees-32)*5)/9)+273.15) + " Kelvin");
                     break;
             }
         }
